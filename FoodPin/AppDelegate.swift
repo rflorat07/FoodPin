@@ -23,13 +23,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Navigation var appearance
         UINavigationBar.appearance().barTintColor = #colorLiteral(red: 0.8470588235, green: 0.2901960784, blue: 0.1254901961, alpha: 1)
+        UINavigationBar.appearance().layer.borderWidth = 0.0
         UINavigationBar.appearance().tintColor = UIColor.white
         
     
         if let barFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 23.0) {
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white, NSAttributedStringKey.font:barFont]
-   
-            UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font:barFont], for: .normal)
+        }
+        
+        if let buttonItemFont = UIFont(name: "AvenirNextCondensed-DemiBold", size: 18.0) {
+            UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font:buttonItemFont], for: .normal)
         }
         
         // Navigation bar back indicator

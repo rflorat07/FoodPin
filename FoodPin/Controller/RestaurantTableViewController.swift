@@ -9,9 +9,11 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
     var restaurants: [RestaurantMO] = []
+    var searchResults:[RestaurantMO] = []
+    var searchController:UISearchController!
     var fetchResultController: NSFetchedResultsController<RestaurantMO>!
     
     override func viewDidLoad() {
@@ -21,17 +23,53 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // Search bar added in the header of table view
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        
+        // Customizing the Appearance of the Search Bar
+
+        searchController.searchBar.barTintColor = #colorLiteral(red: 0.8549019608, green: 0.3921568627, blue: 0.2745098039, alpha: 1)
+        searchController.searchBar.backgroundColor = #colorLiteral(red: 0.8549019608, green: 0.3921568627, blue: 0.2745098039, alpha: 1)
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.backgroundImage = UIImage()
+        searchController.searchBar.placeholder = "Search restaurants..."
+   
+        tableView.tableHeaderView = searchController.searchBar
+        
         // Fetch data from data store
         fetchRestaurantsData()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
-                destinationController.restaurant = restaurants[indexPath.row]
+                destinationController.restaurant = (searchController.isActive) ?
+                    searchResults[indexPath.row] : restaurants[indexPath.row]
             }
         }
+    }
+    
+    // MARK: - Search Results
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            filterContent(for: searchText)
+            tableView.reloadData()
+        }
+    }
+    
+    // MARK: - Helper methods
+    func filterContent(for searchText: String) {
+        searchResults = restaurants.filter({ (restaurant) -> Bool in
+            if let name = restaurant.name, let location = restaurant.location {
+                let isMatch = name.localizedCaseInsensitiveContains(searchText) || location.localizedCaseInsensitiveContains(searchText)
+                return isMatch
+            }
+            return false
+        })
     }
     
     // MARK: - Change Content
@@ -106,72 +144,104 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurants.count
+        if searchController.isActive {
+            return searchResults.count
+        } else {
+            return restaurants.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantTableViewCell
         
+        // Determine if we get the restaurant from search result or the original array
+        let restaurant = (searchController.isActive) ? searchResults[indexPath.row] : restaurants[indexPath.row]
+        
         // Configure the cell...
         
-        cell.nameLabel.text = restaurants[indexPath.row].name
-        cell.locationLabel.text = restaurants[indexPath.row].location
-        cell.typeLabel.text = restaurants[indexPath.row].type
-        cell.thumbnailImageView.image = UIImage(data: restaurants[indexPath.row].image! )
-        cell.accessoryType = restaurants[indexPath.row].isVisited ? .checkmark : .none
+        cell.nameLabel.text = restaurant.name
+        cell.locationLabel.text = restaurant.location
+        cell.typeLabel.text = restaurant.type
+        cell.thumbnailImageView.image = UIImage(data: restaurant.image! )
+        cell.accessoryType = restaurant.isVisited ? .checkmark : .none
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            restaurants.remove(at: indexPath.row)
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if searchController.isActive {
+            return false
+        } else {
+            return true
         }
-        
-        tableView.deleteRows(at: [indexPath], with: .fade)
-        
     }
+   
+    // MARK: - Swipe cell
     
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        // Social Sharing Button
-        let shareAction = UITableViewRowAction(style:
-            UITableViewRowActionStyle.default, title: "Share", handler: { (action,
-                indexPath) -> Void in
-                
-                let defaultText = "Just checking in at " + self.restaurants[indexPath.row].name!
-                
-                if let imageToShare = UIImage(data: self.restaurants[indexPath.row].image! ) {
-                    
-                    let activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
-                    
-                    self.present(activityController, animated: true, completion: nil)
-                }
-        })
-        
-        // Delete button
-        let deleteAction = UITableViewRowAction(style:UITableViewRowActionStyle.default, title: "Delete",handler: { (action,
-            indexPath) -> Void in
-            
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { (action, sourceView, completionHandler) in
+            // Delete the row from the data store
             if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
-                
                 let context = appDelegate.persistentContainer.viewContext
                 let restaurantToDelete = self.fetchResultController.object(at: indexPath)
-                
                 context.delete(restaurantToDelete)
+                
                 appDelegate.saveContext()
             }
             
-        })
+            // Call completion handler with true to indicate
+            completionHandler(true)
+        }
         
-        //Customize action buttons
-        shareAction.backgroundColor = UIColor(red: 48.0/255.0, green: 173.0/255.0, blue: 99.0/255.0, alpha: 1.0)
-        deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, sourceView, completionHandler) in
+            let defaultText = "Just checking in at " + self.restaurants[indexPath.row].name!
+            
+            let activityController: UIActivityViewController
+            
+            if let restaurantImage = self.restaurants[indexPath.row].image,
+                let imageToShare = UIImage(data: restaurantImage as Data) {
+                activityController = UIActivityViewController(activityItems: [defaultText, imageToShare], applicationActivities: nil)
+            } else  {
+                activityController = UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+            }
+            
+            if let popoverController = activityController.popoverPresentationController {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    popoverController.sourceView = cell
+                    popoverController.sourceRect = cell.bounds
+                }
+            }
+            
+            self.present(activityController, animated: true, completion: nil)
+            completionHandler(true)
+        }
         
-        return [deleteAction, shareAction]
+        // Customize the action buttons
+        deleteAction.backgroundColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
+        deleteAction.image = UIImage(named: "delete")
+        shareAction.backgroundColor = UIColor(red: 254.0/255.0, green: 149.0/255.0, blue: 38.0/255.0, alpha: 1.0)
+        shareAction.image = UIImage(named: "share")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [deleteAction, shareAction])
+        
+        return swipeConfiguration
+    }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let checkInAction = UIContextualAction(style: .normal, title: "Check-in") { (action, sourceView, completionHandler) in
+            self.restaurants[indexPath.row].isVisited = (self.restaurants[indexPath.row].isVisited) ? false : true
+            completionHandler(true)
+        }
+        
+        // Customize the action button
+        checkInAction.backgroundColor = UIColor(red: 39.0/255.0, green: 174.0/255.0, blue: 96.0/255.0, alpha: 1.0)
+        checkInAction.image = self.restaurants[indexPath.row].isVisited ? UIImage(named: "undo") : UIImage(named: "tick")
+        
+        let swipeConfiguration = UISwipeActionsConfiguration(actions: [checkInAction])
+        
+        return swipeConfiguration
     }
     
 }
