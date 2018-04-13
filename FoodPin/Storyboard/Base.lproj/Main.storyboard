@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -637,6 +638,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwv-yv-Q6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="380" y="143"/>
+        </scene>
+        <!--Walkthrough Page View Controller-->
+        <scene sceneID="ifp-FA-uqB">
+            <objects>
+                <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="TgC-7I-lzH" customClass="WalkthroughPageViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DeK-8m-chd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="1739"/>
+        </scene>
+        <!--Walkthrough Content View Controller-->
+        <scene sceneID="fly-T8-7T5">
+            <objects>
+                <viewController storyboardIdentifier="WalkthroughContentViewController" id="dMh-Sf-ydk" customClass="WalkthroughContentViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="R3f-7i-F7G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Personalize" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y4-CD-2UG">
+                                <rect key="frame" x="114" y="40" width="148" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pin your favorite restaurants and create your own food guide" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dF-oH-QBk">
+                                <rect key="frame" x="46.5" y="334" width="282" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="282" id="SKQ-3r-fpw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="COw-FH-wyh">
+                                <rect key="frame" x="168" y="610" width="39" height="37"/>
+                            </pageControl>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MxT-jJ-Keb">
+                                <rect key="frame" x="37" y="92" width="300" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MxT-jJ-Keb" secondAttribute="height" multiplier="75:58" id="2sT-ou-hpm"/>
+                                    <constraint firstAttribute="width" constant="300" id="eOV-kl-nn8"/>
+                                    <constraint firstAttribute="height" constant="232" id="gAE-qv-Y83"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DaT-ZR-Ags">
+                                <rect key="frame" x="320" y="613" width="39" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTappedWithSender:" destination="dMh-Sf-ydk" eventType="touchUpInside" id="Uyx-nW-L1U"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75294117647058822" green="0.22352941176470587" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="2y4-CD-2UG" firstAttribute="centerX" secondItem="R3f-7i-F7G" secondAttribute="centerX" id="1yT-rV-HeS"/>
+                            <constraint firstItem="NbU-Jm-rej" firstAttribute="trailing" secondItem="MxT-jJ-Keb" secondAttribute="trailing" constant="38" id="6Ms-Ye-8N7"/>
+                            <constraint firstItem="COw-FH-wyh" firstAttribute="centerX" secondItem="R3f-7i-F7G" secondAttribute="centerX" id="Iqw-xx-0rt"/>
+                            <constraint firstItem="MxT-jJ-Keb" firstAttribute="leading" secondItem="NbU-Jm-rej" secondAttribute="leading" constant="37" id="KkJ-eP-miD"/>
+                            <constraint firstItem="NbU-Jm-rej" firstAttribute="trailing" secondItem="DaT-ZR-Ags" secondAttribute="trailing" constant="16" id="Yr1-7a-tef"/>
+                            <constraint firstItem="9dF-oH-QBk" firstAttribute="top" secondItem="MxT-jJ-Keb" secondAttribute="bottom" constant="10" id="ac5-se-1fy"/>
+                            <constraint firstItem="9dF-oH-QBk" firstAttribute="centerX" secondItem="R3f-7i-F7G" secondAttribute="centerX" id="cId-K8-q1J"/>
+                            <constraint firstItem="2y4-CD-2UG" firstAttribute="top" secondItem="NbU-Jm-rej" secondAttribute="top" constant="20" id="hMh-3x-mTv"/>
+                            <constraint firstItem="MxT-jJ-Keb" firstAttribute="top" secondItem="2y4-CD-2UG" secondAttribute="bottom" constant="16" id="lku-pY-FOn"/>
+                            <constraint firstItem="NbU-Jm-rej" firstAttribute="bottom" secondItem="DaT-ZR-Ags" secondAttribute="bottom" constant="24" id="tHp-8g-GAJ"/>
+                            <constraint firstItem="NbU-Jm-rej" firstAttribute="bottom" secondItem="COw-FH-wyh" secondAttribute="bottom" constant="20" id="vvW-Ya-tEf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NbU-Jm-rej"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentImageView" destination="MxT-jJ-Keb" id="JWV-fV-fKm"/>
+                        <outlet property="contentLabel" destination="9dF-oH-QBk" id="oDA-I3-7Ku"/>
+                        <outlet property="forwardButton" destination="DaT-ZR-Ags" id="oKP-ns-5z2"/>
+                        <outlet property="headingLabel" destination="2y4-CD-2UG" id="f5V-wY-alI"/>
+                        <outlet property="pageControl" destination="COw-FH-wyh" id="f4e-Iy-Wi4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OSy-31-D9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="1738"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nXn-fP-yxw">
