@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F0C6E3D2084D58A001CF75C /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C6E3B2084D58A001CF75C /* About.storyboard */; };
-		4F0C6E3F2084D5D1001CF75C /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C6E3E2084D5D1001CF75C /* Discover.storyboard */; };
+		4F0C6E3D2084D58A001CF75C /* about.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C6E3B2084D58A001CF75C /* about.storyboard */; };
+		4F0C6E3F2084D5D1001CF75C /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C6E3E2084D5D1001CF75C /* discover.storyboard */; };
+		4F0C6E412084DC1F001CF75C /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6E402084DC1F001CF75C /* AboutTableViewController.swift */; };
+		4F0C6E432084E021001CF75C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6E422084E021001CF75C /* WebViewController.swift */; };
 		4F5111B0207B975800209DFC /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5111AF207B975800209DFC /* RestaurantDetailViewController.swift */; };
 		4F5111B2207B9ECA00209DFC /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5111B1207B9ECA00209DFC /* Restaurant.swift */; };
 		4F5111B4207BA7FF00209DFC /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5111B3207BA7FF00209DFC /* RestaurantDetailTableViewCell.swift */; };
@@ -24,12 +26,15 @@
 		4FA5373F20779B0E0072F8AA /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5373E20779B0E0072F8AA /* RestaurantTableViewController.swift */; };
 		4FA537412077A3280072F8AA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA537402077A3280072F8AA /* RestaurantTableViewCell.swift */; };
 		4FC28B792080A1FD0001CA23 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FC28B772080A1FD0001CA23 /* FoodPin.xcdatamodeld */; };
+		4FF968072084EA2E0026C6A9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF968062084EA2E0026C6A9 /* CloudKit.framework */; };
 		4FF97244207F915600A3FE8E /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF97243207F915600A3FE8E /* AddRestaurantController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4F0C6E3C2084D58A001CF75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPin/Storyboard/Base.lproj/About.storyboard; sourceTree = "<group>"; };
-		4F0C6E3E2084D5D1001CF75C /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		4F0C6E3C2084D58A001CF75C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FoodPin/Storyboard/Base.lproj/about.storyboard; sourceTree = "<group>"; };
+		4F0C6E3E2084D5D1001CF75C /* discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = discover.storyboard; sourceTree = "<group>"; };
+		4F0C6E402084DC1F001CF75C /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
+		4F0C6E422084E021001CF75C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4F5111AF207B975800209DFC /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		4F5111B1207B9ECA00209DFC /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		4F5111B3207BA7FF00209DFC /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -47,6 +52,8 @@
 		4FA5373E20779B0E0072F8AA /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		4FA537402077A3280072F8AA /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		4FC28B782080A1FD0001CA23 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
+		4FF968052084EA010026C6A9 /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
+		4FF968062084EA2E0026C6A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		4FF97243207F915600A3FE8E /* AddRestaurantController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F5B711D207E46200008EC4B /* MapKit.framework in Frameworks */,
+				4FF968072084EA2E0026C6A9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +73,7 @@
 		4F5B711B207E46200008EC4B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4FF968062084EA2E0026C6A9 /* CloudKit.framework */,
 				4F5B711C207E46200008EC4B /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -74,8 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				4FA53730207799F30072F8AA /* Main.storyboard */,
-				4F0C6E3E2084D5D1001CF75C /* Discover.storyboard */,
-				4F0C6E3B2084D58A001CF75C /* About.storyboard */,
+				4F0C6E3E2084D5D1001CF75C /* discover.storyboard */,
+				4F0C6E3B2084D58A001CF75C /* about.storyboard */,
 				4FA53735207799F50072F8AA /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
@@ -91,6 +100,8 @@
 				4FF97243207F915600A3FE8E /* AddRestaurantController.swift */,
 				4F7D93002080FB750046A9C9 /* WalkthroughPageViewController.swift */,
 				4F7D92FE2080FA160046A9C9 /* WalkthroughContentViewController.swift */,
+				4F0C6E402084DC1F001CF75C /* AboutTableViewController.swift */,
+				4F0C6E422084E021001CF75C /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -132,6 +143,7 @@
 		4FA5372B207799F30072F8AA /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
+				4FF968052084EA010026C6A9 /* FoodPin.entitlements */,
 				4F5B7123207E4F9A0008EC4B /* View */,
 				4F5B7122207E4F840008EC4B /* Model */,
 				4FC28B7A2080A20D0001CA23 /* DataModel */,
@@ -188,6 +200,12 @@
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -217,8 +235,8 @@
 			files = (
 				4FA53737207799F50072F8AA /* LaunchScreen.storyboard in Resources */,
 				4FA53734207799F50072F8AA /* Assets.xcassets in Resources */,
-				4F0C6E3F2084D5D1001CF75C /* Discover.storyboard in Resources */,
-				4F0C6E3D2084D58A001CF75C /* About.storyboard in Resources */,
+				4F0C6E3F2084D5D1001CF75C /* discover.storyboard in Resources */,
+				4F0C6E3D2084D58A001CF75C /* about.storyboard in Resources */,
 				4FA53732207799F30072F8AA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FF97244207F915600A3FE8E /* AddRestaurantController.swift in Sources */,
+				4F0C6E412084DC1F001CF75C /* AboutTableViewController.swift in Sources */,
 				4F5111B2207B9ECA00209DFC /* Restaurant.swift in Sources */,
 				4FA5373F20779B0E0072F8AA /* RestaurantTableViewController.swift in Sources */,
 				4F5B711A207E34E40008EC4B /* ReviewViewController.swift in Sources */,
@@ -240,6 +259,7 @@
 				4FC28B792080A1FD0001CA23 /* FoodPin.xcdatamodeld in Sources */,
 				4F5111B4207BA7FF00209DFC /* RestaurantDetailTableViewCell.swift in Sources */,
 				4F5111B0207B975800209DFC /* RestaurantDetailViewController.swift in Sources */,
+				4F0C6E432084E021001CF75C /* WebViewController.swift in Sources */,
 				4FA5372D207799F30072F8AA /* AppDelegate.swift in Sources */,
 				4F5B711F207E4F400008EC4B /* MapViewController.swift in Sources */,
 			);
@@ -248,12 +268,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4F0C6E3B2084D58A001CF75C /* About.storyboard */ = {
+		4F0C6E3B2084D58A001CF75C /* about.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4F0C6E3C2084D58A001CF75C /* Base */,
 			);
-			name = About.storyboard;
+			name = about.storyboard;
 			sourceTree = "<group>";
 		};
 		4FA53730207799F30072F8AA /* Main.storyboard */ = {
@@ -393,6 +413,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4M7AT6GDCK;
 				INFOPLIST_FILE = FoodPin/Info.plist;
@@ -402,6 +424,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogerflorat.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -411,6 +434,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FoodPin/FoodPin.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4M7AT6GDCK;
 				INFOPLIST_FILE = FoodPin/Info.plist;
@@ -420,6 +445,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rogerflorat.FoodPin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

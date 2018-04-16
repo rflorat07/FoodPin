@@ -646,7 +646,7 @@
                 <pageViewController storyboardIdentifier="WalkthroughController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="TgC-7I-lzH" customClass="WalkthroughPageViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DeK-8m-chd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="380" y="-644"/>
+            <point key="canvasLocation" x="-558" y="-618"/>
         </scene>
         <!--Walkthrough Content View Controller-->
         <scene sceneID="fly-T8-7T5">
@@ -719,7 +719,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSy-31-D9h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1319" y="-644"/>
+            <point key="canvasLocation" x="380" y="-618"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nXn-fP-yxw">
@@ -762,25 +762,25 @@
             </objects>
             <point key="canvasLocation" x="380" y="142.57871064467767"/>
         </scene>
-        <!--about-->
+        <!--About-->
         <scene sceneID="Cwk-Wd-SMx">
             <objects>
-                <viewControllerPlaceholder storyboardName="about" id="1LY-pL-LOC" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="about" id="1LY-pL-LOC" userLabel="About" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="zHp-kt-aa3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECd-tN-Ni3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="626" y="599"/>
+            <point key="canvasLocation" x="567" y="598"/>
         </scene>
-        <!--discover-->
+        <!--Discover-->
         <scene sceneID="E8P-b6-1ye">
             <objects>
-                <viewControllerPlaceholder storyboardName="discover" id="gnL-GF-44d" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="discover" id="gnL-GF-44d" userLabel="Discover" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="2Mo-Wi-d9E"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="He6-yx-yza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1316" y="918"/>
+            <point key="canvasLocation" x="379" y="598"/>
         </scene>
     </scenes>
     <resources>
