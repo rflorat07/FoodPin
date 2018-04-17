@@ -11,6 +11,7 @@
 		4F0C6E3F2084D5D1001CF75C /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F0C6E3E2084D5D1001CF75C /* discover.storyboard */; };
 		4F0C6E412084DC1F001CF75C /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6E402084DC1F001CF75C /* AboutTableViewController.swift */; };
 		4F0C6E432084E021001CF75C /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C6E422084E021001CF75C /* WebViewController.swift */; };
+		4F47A4A0208621A6003CB839 /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F47A49F208621A5003CB839 /* DiscoverTableViewController.swift */; };
 		4F5111B0207B975800209DFC /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5111AF207B975800209DFC /* RestaurantDetailViewController.swift */; };
 		4F5111B2207B9ECA00209DFC /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5111B1207B9ECA00209DFC /* Restaurant.swift */; };
 		4F5111B4207BA7FF00209DFC /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5111B3207BA7FF00209DFC /* RestaurantDetailTableViewCell.swift */; };
@@ -35,6 +36,7 @@
 		4F0C6E3E2084D5D1001CF75C /* discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = discover.storyboard; sourceTree = "<group>"; };
 		4F0C6E402084DC1F001CF75C /* AboutTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		4F0C6E422084E021001CF75C /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		4F47A49F208621A5003CB839 /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
 		4F5111AF207B975800209DFC /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		4F5111B1207B9ECA00209DFC /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		4F5111B3207BA7FF00209DFC /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				4F7D92FE2080FA160046A9C9 /* WalkthroughContentViewController.swift */,
 				4F0C6E402084DC1F001CF75C /* AboutTableViewController.swift */,
 				4F0C6E422084E021001CF75C /* WebViewController.swift */,
+				4F47A49F208621A5003CB839 /* DiscoverTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				4F5111B0207B975800209DFC /* RestaurantDetailViewController.swift in Sources */,
 				4F0C6E432084E021001CF75C /* WebViewController.swift in Sources */,
 				4FA5372D207799F30072F8AA /* AppDelegate.swift in Sources */,
+				4F47A4A0208621A6003CB839 /* DiscoverTableViewController.swift in Sources */,
 				4F5B711F207E4F400008EC4B /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
