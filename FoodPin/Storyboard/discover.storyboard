@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,27 +14,65 @@
         <scene sceneID="dyP-eN-OYS">
             <objects>
                 <tableViewController id="Sv9-Yl-yke" customClass="DiscoverTableViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqs-fL-dXD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="305" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqs-fL-dXD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="ex3-AT-dzW" style="IBUITableViewCellStyleDefault" id="x2p-Pg-4Gr">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="305" id="x2p-Pg-4Gr" customClass="RestaurantTableViewCell" customModule="FoodPin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="305"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x2p-Pg-4Gr" id="fWr-rM-Yls">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="304.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ex3-AT-dzW">
-                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" translatesAutoresizingMaskIntoConstraints="NO" id="DMS-Pd-z3p">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="220" id="Ar2-JA-HIT"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8f-ix-6WO">
+                                            <rect key="frame" x="41" y="228" width="293" height="28"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Medium" family="Avenir Next Condensed" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWV-4g-xtd">
+                                            <rect key="frame" x="41" y="256" width="293" height="17"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="12"/>
+                                            <color key="textColor" red="0.33333333333333331" green="0.3333333432674408" blue="0.3333333432674408" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5A-Es-EFI">
+                                            <rect key="frame" x="41" y="273" width="293" height="19.5"/>
+                                            <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="h5A-Es-EFI" firstAttribute="leading" secondItem="fWr-rM-Yls" secondAttribute="leadingMargin" constant="25" id="4N8-JF-dTv"/>
+                                        <constraint firstAttribute="trailing" secondItem="DMS-Pd-z3p" secondAttribute="trailing" id="IrF-qQ-oPb"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="h5A-Es-EFI" secondAttribute="trailing" constant="25" id="NSU-Zp-FqP"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="z8f-ix-6WO" secondAttribute="trailing" constant="25" id="QDq-iW-iTe"/>
+                                        <constraint firstItem="z8f-ix-6WO" firstAttribute="leading" secondItem="fWr-rM-Yls" secondAttribute="leadingMargin" constant="25" id="SqW-La-F3A"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zWV-4g-xtd" secondAttribute="trailing" constant="25" id="c79-Wn-PUy"/>
+                                        <constraint firstItem="zWV-4g-xtd" firstAttribute="leading" secondItem="fWr-rM-Yls" secondAttribute="leadingMargin" constant="25" id="g9C-y3-8Um"/>
+                                        <constraint firstItem="DMS-Pd-z3p" firstAttribute="top" secondItem="fWr-rM-Yls" secondAttribute="top" id="hK9-Hn-n7M"/>
+                                        <constraint firstItem="h5A-Es-EFI" firstAttribute="top" secondItem="zWV-4g-xtd" secondAttribute="bottom" id="oj1-93-sre"/>
+                                        <constraint firstItem="z8f-ix-6WO" firstAttribute="top" secondItem="DMS-Pd-z3p" secondAttribute="bottom" constant="8" id="p8i-So-gES"/>
+                                        <constraint firstItem="DMS-Pd-z3p" firstAttribute="leading" secondItem="fWr-rM-Yls" secondAttribute="leading" id="t9N-j7-ikz"/>
+                                        <constraint firstItem="DMS-Pd-z3p" firstAttribute="centerX" secondItem="fWr-rM-Yls" secondAttribute="centerX" id="vd3-9m-zsh"/>
+                                        <constraint firstItem="zWV-4g-xtd" firstAttribute="top" secondItem="z8f-ix-6WO" secondAttribute="bottom" id="xAR-lT-8Tb"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="locationLabel" destination="h5A-Es-EFI" id="RbL-u3-aVl"/>
+                                    <outlet property="nameLabel" destination="z8f-ix-6WO" id="awN-pF-qEC"/>
+                                    <outlet property="thumbnailImageView" destination="DMS-Pd-z3p" id="6bb-Qm-Lhu"/>
+                                    <outlet property="typeLabel" destination="zWV-4g-xtd" id="v8V-l1-wsr"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -52,7 +91,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
             </objects>
-            <point key="canvasLocation" x="2161" y="918"/>
+            <point key="canvasLocation" x="2159.1999999999998" y="917.09145427286364"/>
         </scene>
         <!--Discover-->
         <scene sceneID="HcX-ja-aC0">
@@ -74,5 +113,6 @@
     </scenes>
     <resources>
         <image name="discover" width="25" height="19"/>
+        <image name="photo" width="24" height="18"/>
     </resources>
 </document>

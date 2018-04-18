@@ -749,6 +749,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2nU-8w-a4x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="knd-eg-4yY">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -766,7 +767,7 @@
         <scene sceneID="Cwk-Wd-SMx">
             <objects>
                 <viewControllerPlaceholder storyboardName="about" id="1LY-pL-LOC" userLabel="About" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="zHp-kt-aa3"/>
+                    <tabBarItem key="tabBarItem" title="About" image="about" id="zHp-kt-aa3"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ECd-tN-Ni3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -776,7 +777,7 @@
         <scene sceneID="E8P-b6-1ye">
             <objects>
                 <viewControllerPlaceholder storyboardName="discover" id="gnL-GF-44d" userLabel="Discover" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2Mo-Wi-d9E"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="2Mo-Wi-d9E"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="He6-yx-yza" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -784,10 +785,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="about" width="23" height="22"/>
         <image name="barrafina" width="480" height="480"/>
         <image name="cafeloisl" width="480" height="480"/>
         <image name="check" width="28" height="28"/>
         <image name="cross" width="24" height="24"/>
+        <image name="discover" width="25" height="19"/>
         <image name="favorite" width="17" height="25"/>
         <image name="photoalbum" width="64" height="64"/>
     </resources>
