@@ -29,6 +29,7 @@
 		4FB416DB20874E1A00A09CF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FB416D920874E1A00A09CF8 /* InfoPlist.strings */; };
 		4FB416DE20874E1A00A09CF8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FB416DC20874E1A00A09CF8 /* Localizable.strings */; };
 		4FB416E72087587100A09CF8 /* aboutfoodpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB416E92087587100A09CF8 /* aboutfoodpin.png */; };
+		4FB416EF2087724B00A09CF8 /* QuickAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB416EE2087724B00A09CF8 /* QuickAction.swift */; };
 		4FC28B792080A1FD0001CA23 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FC28B772080A1FD0001CA23 /* FoodPin.xcdatamodeld */; };
 		4FF968072084EA2E0026C6A9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF968062084EA2E0026C6A9 /* CloudKit.framework */; };
 		4FF97244207F915600A3FE8E /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF97243207F915600A3FE8E /* AddRestaurantController.swift */; };
@@ -67,6 +68,7 @@
 		4FB416EB2087588C00A09CF8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/aboutfoodpin.png"; sourceTree = "<group>"; };
 		4FB416EC20875C1A00A09CF8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "FoodPin/Storyboard/zh-Hant.lproj/about.strings"; sourceTree = "<group>"; };
 		4FB416ED20875C1A00A09CF8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		4FB416EE2087724B00A09CF8 /* QuickAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAction.swift; sourceTree = "<group>"; };
 		4FC28B782080A1FD0001CA23 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		4FF968052084EA010026C6A9 /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
 		4FF968062084EA2E0026C6A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				4F5111B1207B9ECA00209DFC /* Restaurant.swift */,
+				4FB416EE2087724B00A09CF8 /* QuickAction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				4F5B711A207E34E40008EC4B /* ReviewViewController.swift in Sources */,
 				4FA537412077A3280072F8AA /* RestaurantTableViewCell.swift in Sources */,
 				4F7D92FF2080FA160046A9C9 /* WalkthroughContentViewController.swift in Sources */,
+				4FB416EF2087724B00A09CF8 /* QuickAction.swift in Sources */,
 				4F7D93012080FB750046A9C9 /* WalkthroughPageViewController.swift in Sources */,
 				4FC28B792080A1FD0001CA23 /* FoodPin.xcdatamodeld in Sources */,
 				4F5111B4207BA7FF00209DFC /* RestaurantDetailTableViewCell.swift in Sources */,

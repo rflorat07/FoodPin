@@ -105,7 +105,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="La8-BK-FPK"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fuW-Hq-4AP">
                             <connections>
-                                <segue destination="Lvx-kX-zfa" kind="presentation" identifier="      " id="5Fs-gY-3wH"/>
+                                <segue destination="Lvx-kX-zfa" kind="presentation" identifier="addRestaurant" id="5Fs-gY-3wH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -39,6 +39,19 @@ class WalkthroughContentViewController: UIViewController {
         }
     }
     
+    
+    // Add Quick Actions
+    func addQuickActions() {
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
+            let bundleIdentifier = Bundle.main.bundleIdentifier
+            let shortcutItem1 = UIApplicationShortcutItem(type: "\(String(describing: bundleIdentifier)).OpenFavorites", localizedTitle: "Show Favorites",
+                localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "favorite-shortcut"), userInfo: nil)
+            let shortcutItem2 = UIApplicationShortcutItem(type: "\(String(describing: bundleIdentifier)).OpenDiscover", localizedTitle: "Discover restaurants", localizedSubtitle: nil, icon: UIApplicationShortcutIcon(templateImageName: "discover-shortcut"), userInfo: nil)
+            let shortcutItem3 = UIApplicationShortcutItem(type: "\(String(describing: bundleIdentifier)).NewRestaurant", localizedTitle: "New Restaurant",localizedSubtitle: nil, icon: UIApplicationShortcutIcon(type: .add), userInfo: nil)
+            UIApplication.shared.shortcutItems = [shortcutItem1, shortcutItem2,shortcutItem3]
+        }
+    }
+    
     @IBAction func nextButtonTapped(sender: UIButton) {
         switch index {
         case 0...1:
@@ -46,6 +59,7 @@ class WalkthroughContentViewController: UIViewController {
             pageViewController.forward(index: index)
             
         case 2:
+            addQuickActions()
             UserDefaults.standard.set(true, forKey: "hasViewedWalkthrough")
             dismiss(animated: true, completion: nil)
             
