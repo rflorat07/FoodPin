@@ -26,6 +26,9 @@
 		4FA53737207799F50072F8AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FA53735207799F50072F8AA /* LaunchScreen.storyboard */; };
 		4FA5373F20779B0E0072F8AA /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5373E20779B0E0072F8AA /* RestaurantTableViewController.swift */; };
 		4FA537412077A3280072F8AA /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA537402077A3280072F8AA /* RestaurantTableViewCell.swift */; };
+		4FB416DB20874E1A00A09CF8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FB416D920874E1A00A09CF8 /* InfoPlist.strings */; };
+		4FB416DE20874E1A00A09CF8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FB416DC20874E1A00A09CF8 /* Localizable.strings */; };
+		4FB416E72087587100A09CF8 /* aboutfoodpin.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FB416E92087587100A09CF8 /* aboutfoodpin.png */; };
 		4FC28B792080A1FD0001CA23 /* FoodPin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FC28B772080A1FD0001CA23 /* FoodPin.xcdatamodeld */; };
 		4FF968072084EA2E0026C6A9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF968062084EA2E0026C6A9 /* CloudKit.framework */; };
 		4FF97244207F915600A3FE8E /* AddRestaurantController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF97243207F915600A3FE8E /* AddRestaurantController.swift */; };
@@ -53,6 +56,17 @@
 		4FA53738207799F50072F8AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FA5373E20779B0E0072F8AA /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		4FA537402077A3280072F8AA /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		4FB416DA20874E1A00A09CF8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4FB416DD20874E1A00A09CF8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4FB416DF20874EA600A09CF8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		4FB416E020874EA600A09CF8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4FB416E12087564400A09CF8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = FoodPin/Storyboard/de.lproj/about.strings; sourceTree = "<group>"; };
+		4FB416E22087564400A09CF8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		4FB416E82087587100A09CF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/aboutfoodpin.png; sourceTree = "<group>"; };
+		4FB416EA2087588B00A09CF8 /* de */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = de; path = de.lproj/aboutfoodpin.png; sourceTree = "<group>"; };
+		4FB416EB2087588C00A09CF8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hant"; path = "zh-Hant.lproj/aboutfoodpin.png"; sourceTree = "<group>"; };
+		4FB416EC20875C1A00A09CF8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "FoodPin/Storyboard/zh-Hant.lproj/about.strings"; sourceTree = "<group>"; };
+		4FB416ED20875C1A00A09CF8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		4FC28B782080A1FD0001CA23 /* FoodPin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodPin.xcdatamodel; sourceTree = "<group>"; };
 		4FF968052084EA010026C6A9 /* FoodPin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FoodPin.entitlements; sourceTree = "<group>"; };
 		4FF968062084EA2E0026C6A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -146,17 +160,28 @@
 		4FA5372B207799F30072F8AA /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
-				4FF968052084EA010026C6A9 /* FoodPin.entitlements */,
 				4F5B7123207E4F9A0008EC4B /* View */,
 				4F5B7122207E4F840008EC4B /* Model */,
+				4FB416D12087476500A09CF8 /* Images */,
 				4FC28B7A2080A20D0001CA23 /* DataModel */,
 				4F5B7121207E4F670008EC4B /* Controller */,
 				4F5B7120207E4F570008EC4B /* Storyboard */,
-				4FA5372C207799F30072F8AA /* AppDelegate.swift */,
 				4FA53738207799F50072F8AA /* Info.plist */,
+				4FB416DC20874E1A00A09CF8 /* Localizable.strings */,
+				4FB416D920874E1A00A09CF8 /* InfoPlist.strings */,
+				4FA5372C207799F30072F8AA /* AppDelegate.swift */,
+				4FF968052084EA010026C6A9 /* FoodPin.entitlements */,
 				4FA53733207799F50072F8AA /* Assets.xcassets */,
 			);
 			path = FoodPin;
+			sourceTree = "<group>";
+		};
+		4FB416D12087476500A09CF8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4FB416E92087587100A09CF8 /* aboutfoodpin.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		4FC28B7A2080A20D0001CA23 /* DataModel */ = {
@@ -220,6 +245,8 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
+				"zh-Hant",
 			);
 			mainGroup = 4FA53720207799F30072F8AA;
 			productRefGroup = 4FA5372A207799F30072F8AA /* Products */;
@@ -237,8 +264,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FA53737207799F50072F8AA /* LaunchScreen.storyboard in Resources */,
+				4FB416DB20874E1A00A09CF8 /* InfoPlist.strings in Resources */,
 				4FA53734207799F50072F8AA /* Assets.xcassets in Resources */,
 				4F0C6E3F2084D5D1001CF75C /* discover.storyboard in Resources */,
+				4FB416DE20874E1A00A09CF8 /* Localizable.strings in Resources */,
+				4FB416E72087587100A09CF8 /* aboutfoodpin.png in Resources */,
 				4F0C6E3D2084D58A001CF75C /* about.storyboard in Resources */,
 				4FA53732207799F30072F8AA /* Main.storyboard in Resources */,
 			);
@@ -276,6 +306,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				4F0C6E3C2084D58A001CF75C /* Base */,
+				4FB416E12087564400A09CF8 /* de */,
+				4FB416EC20875C1A00A09CF8 /* zh-Hant */,
 			);
 			name = about.storyboard;
 			sourceTree = "<group>";
@@ -284,6 +316,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				4FA53731207799F30072F8AA /* Base */,
+				4FB416E22087564400A09CF8 /* de */,
+				4FB416ED20875C1A00A09CF8 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -294,6 +328,34 @@
 				4FA53736207799F50072F8AA /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4FB416D920874E1A00A09CF8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FB416DA20874E1A00A09CF8 /* de */,
+				4FB416DF20874EA600A09CF8 /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4FB416DC20874E1A00A09CF8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FB416DD20874E1A00A09CF8 /* de */,
+				4FB416E020874EA600A09CF8 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4FB416E92087587100A09CF8 /* aboutfoodpin.png */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FB416E82087587100A09CF8 /* Base */,
+				4FB416EA2087588B00A09CF8 /* de */,
+				4FB416EB2087588C00A09CF8 /* zh-Hant */,
+			);
+			name = aboutfoodpin.png;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
