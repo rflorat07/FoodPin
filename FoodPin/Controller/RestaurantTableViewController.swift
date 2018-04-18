@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
+class RestaurantTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating, UIViewControllerPreviewingDelegate {
     
     var restaurants: [RestaurantMO] = []
     var searchResults:[RestaurantMO] = []
@@ -41,6 +41,9 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
         // Fetch data from data store
         fetchRestaurantsData()
         
+        // Peek and Pop
+        initPeekAndPop()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -66,6 +69,33 @@ class RestaurantTableViewController: UITableViewController, NSFetchedResultsCont
                 destinationController.hidesBottomBarWhenPushed = true
             }
         }
+    }
+    
+    // MARK: - Peek and Pop
+    func initPeekAndPop() {
+        if(traitCollection.forceTouchCapability == .available) {
+            registerForPreviewing(with: self as UIViewControllerPreviewingDelegate, sourceView: view)
+        }
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        
+        guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
+        guard let cell = tableView.cellForRow(at: indexPath) else { return nil }
+        guard let restaurantDetailViewController = storyboard?.instantiateViewController(withIdentifier: "RestaurantDetailViewController") as? RestaurantDetailViewController else { return nil }
+        
+        let selectedRestaurant = restaurants[indexPath.row]
+        restaurantDetailViewController.restaurant = selectedRestaurant
+        restaurantDetailViewController.preferredContentSize = CGSize(width: 0.0, height: 450.0)
+        
+        previewingContext.sourceRect = cell.frame
+        
+        return restaurantDetailViewController
+        
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        show(viewControllerToCommit, sender: self)
     }
     
     // MARK: - Search Results

@@ -117,7 +117,7 @@
         <!--Restaurant Detail View Controller-->
         <scene sceneID="xL6-Kp-1gs">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="mqz-Kg-Z1o" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RestaurantDetailViewController" hidesBottomBarWhenPushed="YES" id="mqz-Kg-Z1o" customClass="RestaurantDetailViewController" customModule="FoodPin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="loO-F6-Npw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
