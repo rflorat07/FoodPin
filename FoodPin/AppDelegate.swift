@@ -8,9 +8,10 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     
@@ -42,7 +43,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Customizing the Appearance of the Tab Bar
         UITabBar.appearance().tintColor = #colorLiteral(red: 0.8470588235, green: 0.2901960784, blue: 0.1254901961, alpha: 1)
-        //UITabBar.appearance().barTintColor = .black
+        
+        // User Notification
+        UNUserNotificationCenter.current().delegate = self
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            if granted {
+                print("User notifications are allowed.")
+            } else {
+                print("User notifications are not allowed.")
+            }
+        }
         
         return true
     }
@@ -74,6 +85,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
         completionHandler(handleQuickAction(shortcutItem: shortcutItem))
     }
+    
+    // MARK: - Notification
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        if response.actionIdentifier == "foodpin.makeReservation" {
+            print("Make reservation...")
+            if let phone = response.notification.request.content.userInfo["phone"]
+            {
+                let telURL = "tel://\(phone)"
+                if let url = URL(string: telURL) {
+                    if UIApplication.shared.canOpenURL(url) {
+                        print("calling \(telURL)")
+                        UIApplication.shared.open(url)
+                    }
+                }
+            }
+        }
+        completionHandler()
+    }
+    
     
     private func handleQuickAction(shortcutItem: UIApplicationShortcutItem) -> Bool
     {
